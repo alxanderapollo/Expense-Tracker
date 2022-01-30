@@ -1,5 +1,6 @@
 //context 
 import React, { createContext, useReducer} from 'react'
+import AppReducer from './AppReducer'
 
 //Initial State - any global state will go in this object
 //each transaction has a unique id, some text to identify the expense, and neg or postive amount to determine the kind of expense
@@ -24,11 +25,10 @@ export const GlobalProvider = ({children}) =>{
     //takes the object that contains all of the data
     const [state,dispatch] = useReducer(AppReducer, initialState);
 
-    //children will be all of the components that are wrapped in the global context provider
+    //children will be all of the components in the App component  that are wrapped in the global context provider
     //the provider will provide a state or any actions
-    //the value prop will take an object - for now we pass in our transactions so we can access any of the items in the object
-    return(<GlobalContext.Provider value={{transactions:state.transactions}} />);
-        {children}
-    </GlobalContext.Provider>)
-
+    //the value prop will take an object - for now we pass in our transactions so we can access any of the items in the object - to do that we use state.transactions
+    return(<GlobalContext.Provider value={{transactions:state.transactions}} >);
+        {children} 
+    </GlobalContext.Provider>);
 }
