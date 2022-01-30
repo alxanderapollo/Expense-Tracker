@@ -5,7 +5,6 @@ export const AddTransaction = () => {
     const [text, setText] = useState('');
     const [amount,setAmount] = useState(0)
 
-
   return <>
     <h3>Add new Transaction</h3>
     <form action="">

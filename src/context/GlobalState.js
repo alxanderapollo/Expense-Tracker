@@ -25,6 +25,11 @@ export const GlobalProvider = ({children}) =>{
     //takes the object that contains all of the data
     const [state,dispatch] = useReducer(AppReducer, initialState);
 
+    //All the actions that we will be using in globalContextprovider
+
+    
+    //when data is added or deleted
+
     //children will be all of the components in the App component  that are wrapped in the global context provider
     //the provider will provide a state or any actions
     //the value prop will take an object - for now we pass in our transactions so we can access any of the items in the object - to do that we use state.transactions
